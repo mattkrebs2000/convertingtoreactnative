@@ -127,16 +127,12 @@ const App = () => {
     <View style={styles.padding}>
     <ScrollView>
                 <Todos
-                style={styles.last}
                   todos={todos}
                   markComplete={markComplete}
                   delTodo={delTodo}/>
                   </ScrollView>
                   </View>
-                
- 
-
-   
+        
     </View>
   );
 }
