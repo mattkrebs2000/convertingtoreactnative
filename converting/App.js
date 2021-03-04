@@ -65,7 +65,7 @@ const App = () => {
   // Delete Todo
   const delTodo = (id) => {
     const db = firebase.firestore();
-    db.collection("todos")
+    db.collection("t")
       .doc(id)
       .delete()
       .then(() => {
@@ -142,11 +142,27 @@ export default App;
 
 
 const styles = StyleSheet.create({
-  
+  container: {
+      flex:1,
+        flexDirection: "column",
+  },
+
+
+     one: {
+      flex:.1,
+        
+  },
+
+     two: {
+      
+     flex:.1,
+  },
+
     three: {
       
-        height:"70%",
+        flex: 1,
   },
+
 
   
 });
