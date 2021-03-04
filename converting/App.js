@@ -1,7 +1,7 @@
 
 import React, {useState, useEffect} from 'react';
 
-import { StyleSheet, Text, View, SafeAreaViewComponent, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
 import Header from "./components/header";
 import Addtodo from "./components/Addtodo";
 import Todos from "./components/Todos";
@@ -121,7 +121,7 @@ const App = () => {
 
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
     <Header />
     <Addtodo addTodo={addTodo}/>
     <View style={styles.padding}>
@@ -133,7 +133,7 @@ const App = () => {
                   </ScrollView>
                   </View>
         
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -142,7 +142,10 @@ export default App;
 
 const styles = StyleSheet.create({
   padding: {
-    padding:50,
+    paddingTop: 50,
+    paddingLeft:10,
+    height: "80%",
+    paddingBottom: 50,
   },
- 
+  
 });

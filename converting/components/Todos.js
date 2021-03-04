@@ -5,7 +5,7 @@ import { TouchableOpacity} from 'react-native';
 const Todos = ({ todos, markComplete, delTodo }) => {
   return todos.map((todo) => (
 
-<TouchableOpacity>
+<TouchableOpacity >
 
     <TodoItem
       key={todo.id}

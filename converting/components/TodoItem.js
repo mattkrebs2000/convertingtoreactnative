@@ -1,27 +1,24 @@
 import React, {useState} from 'react';
 import { Switch, StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
 
-
 const TodoItem = (props) => {
 
   return (
 
     <View style={styles.container}>
       <View style={styles.checkboxContainer}>
-<Switch style={styles.checkbox}
 
-          // value={props.todo.completed}
+<Switch style={styles.checkbox}
           value={props.todo.completed}
-         
           onValueChange={props.markComplete.bind(this, props.todo.id)}
         />
- <Text style={styles.label}>
+ <Text style={ props.todo.completed ?styles.label : styles.label2 }>
         {props.todo.title}</Text>
           <TouchableOpacity
        onPress={props.delTodo.bind(this, props.todo.id)}
         id={props.todo.id}
-        style={{ backgroundColor: 'blue', flex: .2 }}>
-        <Text style={{ fontSize: 20, color: '#fff' }}> X </Text>
+        style={{ backgroundColor: 'red', flex: .07, alignItems: "center",justifyContent: "center", borderRadius: 100 / 2, }}>
+        <Text style={{ fontSize: 15, color: '#fff' }}> X </Text>
         
       </TouchableOpacity>
    </View>
@@ -51,14 +48,20 @@ const styles = StyleSheet.create({
   },
   checkbox: {
   
-   flex:.2,
+   flex:.13,
     color: "red",
-   
     marginLeft: 0,
   },
   label: {
     margin: 8,
-    flex: .3,
-  }
+    flex: .5,
+    textDecorationLine: "line-through",
+  },
+   label2: {
+    margin: 8,
+    flex: .5,
+    textDecorationLine: "none",
+  },
+
 
 });
