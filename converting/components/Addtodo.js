@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, Text, View, TextInput, ScrollView} from 'react-native';
+import { Button, StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity} from 'react-native';
 
 const Addtodo = ({ addTodo }) => {
  const [title, setTitle] = useState("");
@@ -11,24 +11,22 @@ const Addtodo = ({ addTodo }) => {
   };
 
     return (
-          <View style={styles.container}>
+          <TouchableOpacity style={styles.container}>
       <TextInput
         placeholder="Todos"
         placeholderTextColor="black"
         style={styles.input}
         onChangeText={(title) => setTitle(title)}
-        
+        value={title}
       />
-      <View style={styles.center}>
+      <TouchableOpacity style={styles.center} onPress={() => onSubmit()}>
       <Text
-        onPress={() => onSubmit() } 
-        title="Filter!"
-        color="white"
+      title="Add"
         style={styles.button}
-      >Add
-      </Text>
-      </View>
-      </View>
+      ></Text>
+     
+      </TouchableOpacity>
+      </TouchableOpacity>
     );
 
 }
@@ -55,16 +53,14 @@ const styles = StyleSheet.create({
   button: {
 textAlign: "center",
 color: "black",
-
-backgroundColor:"red",
   },
   center: {
     width: "30%",
-backgroundColor: "white",
+backgroundColor: "red",
 borderWidth: 3,
 height:50,
 flex: .3,
-      justifyContent: "center"  
+justifyContent: "center"  
     }
 
 });

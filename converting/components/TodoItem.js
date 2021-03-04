@@ -4,10 +4,8 @@ import { Switch, StyleSheet, Text, View, Button, TouchableOpacity} from 'react-n
 const TodoItem = (props) => {
 
   return (
-
     <View style={styles.container}>
       <View style={styles.checkboxContainer}>
-
 <Switch style={styles.checkbox}
           value={props.todo.completed}
           onValueChange={props.markComplete.bind(this, props.todo.id)}

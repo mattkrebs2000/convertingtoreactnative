@@ -12,6 +12,7 @@ const App = () => {
   const [idOfUpdate, setIdOfUpdate] = useState(null);
   const [truth, setTruth] = useState();
 
+
     useEffect(() => {
     populate();
   }, []);
