@@ -6,8 +6,12 @@ const Addtodo = ({ addTodo }) => {
 
 
   const onSubmit = (e) => {
+    if (title.length>0){
     addTodo(title);
     setTitle("");
+    } else {
+        alert("Do not remind yourself to do nothing?")
+    }
   };
 
     return (
@@ -23,7 +27,7 @@ const Addtodo = ({ addTodo }) => {
       <Text
       title="Add"
         style={styles.button}
-      ></Text>
+      >Add</Text>
      
       </TouchableOpacity>
       </TouchableOpacity>
@@ -40,19 +44,20 @@ const styles = StyleSheet.create({
     fontSize: 28,
     paddingStart: 8,
     backgroundColor: "white",
-    flex: .7,
+    flex: 1,
     height:50,
    
     
   },
   container: {
+ 
     flexDirection: "row",
-    flex:1,
     paddingBottom: 20, 
   },
   button: {
 textAlign: "center",
 color: "black",
+fontSize: 20,
   },
   center: {
     width: "30%",

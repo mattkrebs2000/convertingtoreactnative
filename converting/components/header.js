@@ -5,7 +5,7 @@ import { StyleSheet, Text, View} from 'react-native';
 const Header = () => {
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container2}>
       <Text style={styles.text}> TodoList </Text>
       <Text style={styles.text2}> Home | About </Text>
     </View>
@@ -15,15 +15,12 @@ const Header = () => {
 export default Header;
 
 const styles = StyleSheet.create({
-  container: {
+  container2: {
     backgroundColor: '#333',
     paddingTop: 20,
-  height: "20%",
+    paddingBottom: 10,
     width: "100%",
     justifyContent: "center",
-
-    
-    
   },
   text: {
       fontSize:50,

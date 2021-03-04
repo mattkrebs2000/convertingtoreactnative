@@ -15,8 +15,8 @@ const TodoItem = (props) => {
           <TouchableOpacity
        onPress={props.delTodo.bind(this, props.todo.id)}
         id={props.todo.id}
-        style={{ backgroundColor: 'red', flex: .07, alignItems: "center",justifyContent: "center", borderRadius: 100 / 2, }}>
-        <Text style={{ fontSize: 15, color: '#fff' }}> X </Text>
+        style={{ backgroundColor: 'red', flex: .09, alignItems: "center",justifyContent: "center", borderRadius: 100 / 2, }}>
+        <Text style={{ fontSize: 15, color: '#fff', }}> X </Text>
         
       </TouchableOpacity>
    </View>
@@ -33,12 +33,15 @@ const styles = StyleSheet.create({
   color: "#fff",
   borderWidth: 0,
   borderRadius: 50,
+  alignItems:"center",
  
     },
       container: {
     flex: 1,
     justifyContent: "center",
-    width: 500,
+    width: "98%",
+    marginLeft:5,
+   
   },
   checkboxContainer: {
     flexDirection: "row",
@@ -52,12 +55,12 @@ const styles = StyleSheet.create({
   },
   label: {
     margin: 8,
-    flex: .5,
+    flex: .75,
     textDecorationLine: "line-through",
   },
    label2: {
     margin: 8,
-    flex: .5,
+    flex: .75,
     textDecorationLine: "none",
   },
 

@@ -123,9 +123,9 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-    <Header />
-    <Addtodo addTodo={addTodo}/>
-    <View style={styles.padding}>
+    <Header style={styles.one}/>
+    <Addtodo style={styles.two} addTodo={addTodo}/>
+    <View style={styles.three}>
     <ScrollView>
                 <Todos
                   todos={todos}
@@ -142,11 +142,13 @@ export default App;
 
 
 const styles = StyleSheet.create({
-  padding: {
-    paddingTop: 50,
-    paddingLeft:10,
-    height: "80%",
-    paddingBottom: 50,
+  
+    three: {
+      
+        height:"70%",
   },
+
   
 });
+
+
