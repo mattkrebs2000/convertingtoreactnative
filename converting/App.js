@@ -145,6 +145,8 @@ const styles = StyleSheet.create({
   container: {
       flex:1,
         flexDirection: "column",
+        backgroundColor: "#f4f4f4",
+      
   },
 
 

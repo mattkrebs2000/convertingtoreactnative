@@ -27,7 +27,7 @@ const Addtodo = ({ addTodo }) => {
       <Text
       title="Add"
         style={styles.button}
-      >Add</Text>
+      >Submit</Text>
      
       </TouchableOpacity>
       </TouchableOpacity>
@@ -50,18 +50,17 @@ const styles = StyleSheet.create({
     
   },
   container: {
- 
     flexDirection: "row",
     paddingBottom: 20, 
   },
   button: {
 textAlign: "center",
-color: "black",
+color: "white",
 fontSize: 20,
   },
   center: {
     width: "30%",
-backgroundColor: "red",
+backgroundColor: "#666",
 borderWidth: 3,
 height:50,
 flex: .3,

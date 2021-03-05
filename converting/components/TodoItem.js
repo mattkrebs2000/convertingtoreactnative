@@ -37,15 +37,21 @@ const styles = StyleSheet.create({
  
     },
       container: {
-    flex: 1,
-    justifyContent: "center",
+   
+  justifyContent:"center",
     width: "98%",
     marginLeft:5,
-   
+    backgroundColor: "#f4f4f4",
+   padding: 3,
+   borderColor: "#ccc",
+   borderWidth: 1,
+   borderStyle:'dotted',
+  
   },
   checkboxContainer: {
     flexDirection: "row",
-    marginBottom: 20,
+    marginBottom: 10,
+    marginTop:10,
   },
   checkbox: {
   
