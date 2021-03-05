@@ -158,11 +158,13 @@ const styles = StyleSheet.create({
      two: {
       
      flex:.1,
+      
   },
 
     three: {
       
         flex: 1,
+      
   },
 
 

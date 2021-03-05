@@ -46,12 +46,12 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     flex: 1,
     height:50,
+    
    
     
   },
   container: {
     flexDirection: "row",
-    paddingBottom: 20, 
   },
   button: {
 textAlign: "center",
