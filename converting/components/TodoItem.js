@@ -7,6 +7,8 @@ const TodoItem = (props) => {
     <View style={styles.container}>
       <View style={styles.checkboxContainer}>
 <Switch style={styles.checkbox}
+trackColor={{ false: "red", true: "black" }}
+        thumbColor={props.todo.completed ? "gray" : "black"}
           value={props.todo.completed}
           onValueChange={props.markComplete.bind(this, props.todo.id)}
         />
@@ -63,11 +65,13 @@ const styles = StyleSheet.create({
     margin: 8,
     flex: .75,
     textDecorationLine: "line-through",
+    paddingLeft:10,
   },
    label2: {
     margin: 8,
     flex: .75,
     textDecorationLine: "none",
+     paddingLeft:10,
   },
 
 
