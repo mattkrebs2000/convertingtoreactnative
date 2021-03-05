@@ -1,21 +1,28 @@
-import React, {useState, useEffect} from 'react';
-import { Button, StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity} from 'react-native';
+import React, { useState, useEffect } from "react";
+import {
+  Button,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 
 const Addtodo = ({ addTodo }) => {
- const [title, setTitle] = useState("");
-
+  const [title, setTitle] = useState("");
 
   const onSubmit = (e) => {
-    if (title.length>0){
-    addTodo(title);
-    setTitle("");
+    if (title.length > 0) {
+      addTodo(title);
+      setTitle("");
     } else {
-        alert("Do not remind yourself to do nothing?")
+      alert("Do not remind yourself to do nothing?");
     }
   };
 
-    return (
-          <TouchableOpacity style={styles.container}>
+  return (
+    <TouchableOpacity style={styles.container}>
       <TextInput
         placeholder="Todos"
         placeholderTextColor="black"
@@ -24,47 +31,39 @@ const Addtodo = ({ addTodo }) => {
         value={title}
       />
       <TouchableOpacity style={styles.center} onPress={() => onSubmit()}>
-      <Text
-      title="Add"
-        style={styles.button}
-      >Submit</Text>
-     
+        <Text title="Add" style={styles.button}>
+          Submit
+        </Text>
       </TouchableOpacity>
-      </TouchableOpacity>
-    );
-
-}
+    </TouchableOpacity>
+  );
+};
 export default Addtodo;
 
-
 const styles = StyleSheet.create({
-    input: {
+  input: {
     marginHorizontal: 0,
-   borderWidth: 3,
+    borderWidth: 3,
     fontSize: 28,
     paddingStart: 8,
     backgroundColor: "white",
     flex: 1,
-    height:50,
-    
-   
-    
+    height: 50,
   },
   container: {
     flexDirection: "row",
   },
   button: {
-textAlign: "center",
-color: "white",
-fontSize: 20,
+    textAlign: "center",
+    color: "white",
+    fontSize: 20,
   },
   center: {
     width: "30%",
-backgroundColor: "#666",
-borderWidth: 3,
-height:50,
-flex: .3,
-justifyContent: "center"  
-    }
-
+    backgroundColor: "#666",
+    borderWidth: 3,
+    height: 50,
+    flex: 0.3,
+    justifyContent: "center",
+  },
 });

@@ -1,19 +1,17 @@
+import React, { useState, useEffect } from "react";
 
-import React, {useState, useEffect} from 'react';
-
-import { StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
 import Header from "./components/header";
 import Addtodo from "./components/Addtodo";
 import Todos from "./components/Todos";
 import firebase from "./firebase";
 
 const App = () => {
-   const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([]);
   const [idOfUpdate, setIdOfUpdate] = useState(null);
   const [truth, setTruth] = useState();
 
-
-    useEffect(() => {
+  useEffect(() => {
     populate();
   }, []);
 
@@ -25,19 +23,13 @@ const App = () => {
   }, [truth]);
 
   const markCompleteGlobal = () => {
-
-  
-  
-      let id = idOfUpdate;
-    const itemtoupdate = firebase
-      .firestore()
-      .collection("t")
-      .doc(id);
+    let id = idOfUpdate;
+    const itemtoupdate = firebase.firestore().collection("t").doc(id);
 
     itemtoupdate.update({
       completed: truth,
     });
-  // debugger
+    // debugger
     setIdOfUpdate(null);
     setTruth(null);
   };
@@ -52,13 +44,13 @@ const App = () => {
         if (todo.id === id) {
           todo.completed = !todo.completed;
 
-          setTimeout(function() {
+          setTimeout(function () {
             setTruth(todo.completed);
           }, 1000);
         }
         return todo;
       })
-    )
+    );
     console.log("Second", idOfUpdate, truth);
   };
 
@@ -81,10 +73,7 @@ const App = () => {
   // Add Todo
   const addTodo = (title) => {
     const datas = {
-      id: firebase
-        .firestore()
-        .collection("t")
-        .doc().id,
+      id: firebase.firestore().collection("t").doc().id,
     };
     const db = firebase.firestore();
     db.collection("t")
@@ -101,8 +90,8 @@ const App = () => {
       .firestore()
       .collection("t")
       .get()
-      .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
           let newData = doc.data();
 
           if (todos.indexOf(newData.id) === -1) {
@@ -118,57 +107,37 @@ const App = () => {
       .catch((e) => console.log(e));
   };
 
-
-
-
   return (
     <SafeAreaView style={styles.container}>
-    <Header style={styles.one}/>
-    <Addtodo style={styles.two} addTodo={addTodo}/>
-    <View style={styles.three}>
-    <ScrollView>
-                <Todos
-                  todos={todos}
-                  markComplete={markComplete}
-                  delTodo={delTodo}/>
-                  </ScrollView>
-                  </View>
-        
+      <Header style={styles.one} />
+      <Addtodo style={styles.two} addTodo={addTodo} />
+      <View style={styles.three}>
+        <ScrollView>
+          <Todos todos={todos} markComplete={markComplete} delTodo={delTodo} />
+        </ScrollView>
+      </View>
     </SafeAreaView>
   );
-}
+};
 
-export default App; 
-
+export default App;
 
 const styles = StyleSheet.create({
   container: {
-      flex:1,
-        flexDirection: "column",
-        backgroundColor: "#f4f4f4",
-      
+    flex: 1,
+    flexDirection: "column",
+    backgroundColor: "#f4f4f4",
   },
 
-
-     one: {
-      flex:.1,
-        
+  one: {
+    flex: 0.1,
   },
 
-     two: {
-      
-     flex:.1,
-      
+  two: {
+    flex: 0.1,
   },
 
-    three: {
-      
-        flex: 1,
-      
+  three: {
+    flex: 1,
   },
-
-
-  
 });
-
-
