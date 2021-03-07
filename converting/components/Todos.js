@@ -1,6 +1,5 @@
 import React from "react";
 import TodoItem from "./TodoItem";
-import { TouchableOpacity} from 'react-native';
 
 const Todos = ({ todos, markComplete, delTodo }) => {
   return todos.map((todo) => (

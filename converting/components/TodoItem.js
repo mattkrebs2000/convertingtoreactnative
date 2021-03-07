@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Switch,
   StyleSheet,
@@ -14,8 +14,8 @@ const TodoItem = (props) => {
       <View style={styles.checkboxContainer}>
         <Switch
           style={styles.checkbox}
-          trackColor={{ false: "red", true: "black" }}
-          thumbColor={props.todo.completed ? "lime" : "lightgreen"}
+          trackColor="black"
+          thumbColor="lime"
           value={props.todo.completed}
           onValueChange={props.markComplete.bind(this, props.todo.id)}
         />

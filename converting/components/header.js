@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { StyleSheet, Text, View } from "react-native";
 
 const Header = () => {

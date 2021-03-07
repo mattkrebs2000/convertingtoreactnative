@@ -46,7 +46,7 @@ const App = () => {
 
           setTimeout(function () {
             setTruth(todo.completed);
-          }, 1000);
+          }, 10);
         }
         return todo;
       })
