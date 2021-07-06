@@ -24,7 +24,7 @@ const App = () => {
 
   const markCompleteGlobal = () => {
     let id = idOfUpdate;
-    const itemtoupdate = firebase.firestore().collection("t").doc(id);
+    const itemtoupdate = firebase.firestore().collection("ta").doc(id);
 
     itemtoupdate.update({
       completed: truth,
@@ -57,7 +57,7 @@ const App = () => {
   // Delete Todo
   const delTodo = (id) => {
     const db = firebase.firestore();
-    db.collection("t")
+    db.collection("ta")
       .doc(id)
       .delete()
       .then(() => {
@@ -73,10 +73,10 @@ const App = () => {
   // Add Todo
   const addTodo = (title) => {
     const datas = {
-      id: firebase.firestore().collection("t").doc().id,
+      id: firebase.firestore().collection("ta").doc().id,
     };
     const db = firebase.firestore();
-    db.collection("t")
+    db.collection("ta")
       .doc(datas.id)
       .set({ title: title, completed: false, id: datas.id })
       .then(() => {
@@ -88,7 +88,7 @@ const App = () => {
     setTodos([]);
     return firebase
       .firestore()
-      .collection("t")
+      .collection("ta")
       .get()
       .then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
