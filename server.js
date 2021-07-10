@@ -1,12 +1,18 @@
 const express = require("express");
 const app = express();
-
+const routelocation = require("./routes/route");
 
 const route = 3001; 
 
+// app.get("/", (req, res) => {
+//     res.send("this is what shal")
+// });
 
-app.get("/", (req, res) => {
-    res.send("this is what shall appear")
-})
+// app.get("/things/", (req, res) => {
+//     res.send("this is what shal appearrrrrrr")
+// });
 
-app.listen(route , () => `server listening on port ${route}`)
+
+app.use("/api", routelocation)
+
+app.listen(route, () => console.log(`server started on port: ${route}`));
