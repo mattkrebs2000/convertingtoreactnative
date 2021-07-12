@@ -5,10 +5,7 @@ import Header from "./components/header";
 import Addtodo from "./components/Addtodo";
 import Todos from "./components/Todos";
 import firebase from "./firebase";
-import API from "../API/routesonfrontend";
-
-
-
+import API from "./API/routesonfrontend";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -93,10 +90,10 @@ const App = () => {
   useEffect(() => {
     API.getTodos()
     .then((res) =>
-  console.log(res)
+  console.log("hello", res)
   )
   .catch((err) => console.log(err));
-};
+
   }, []);
 
 
